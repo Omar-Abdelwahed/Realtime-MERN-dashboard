@@ -59,3 +59,4 @@ function fetchTemperaturePressureData(callback) {
 }
 
 module.exports = { User, TemperaturePressure, fetchTemperaturePressureData };
+ 
