@@ -8,7 +8,7 @@ const routerTp = require('./routers/routerTp.js');
 const app = express();
 const PORT = process.env.PORT || 3100;
 
-// Connect to MongoDB
+// l steps taa MongoDB connection
 mongoose.connect('mongodb://localhost:27017/AquaFarm', { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
     console.log('Connected to MongoDB');
@@ -17,15 +17,15 @@ mongoose.connect('mongodb://localhost:27017/AquaFarm', { useNewUrlParser: true, 
     console.error('Failed to connect to MongoDB', err);
   });
 
-// Middleware: You need to call these functions to initialize them
+// Middleware
 app.use(cors());
 app.use(express.json());
 
-// Routes
+// routes: wahda lel users w wahda lel aquadata
 app.use('/api', userRoutes);
 app.use('/api', routerTp);
 
-// Start the server
+// besmelleh:
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
