@@ -3,7 +3,7 @@ const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
 const userRoutes = require('./routers/router');
-const routerTp = require('./routers/routerTp.js');
+const routerAquaStats = require('./routers/routerAquaStats.js');
 
 const app = express();
 const PORT = process.env.PORT || 3100;
@@ -23,7 +23,7 @@ app.use(express.json());
 
 // routes: wahda lel users w wahda lel aquadata
 app.use('/api', userRoutes);
-app.use('/api', routerTp);
+app.use('/api', routerAquaStats);
 
 // besmelleh:
 app.listen(PORT, () => {

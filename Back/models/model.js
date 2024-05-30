@@ -2,7 +2,7 @@
 const mongoose = require('mongoose');
 
 // Define the schema for the temperature and pressure data
-const temperaturePressureSchema = new mongoose.Schema({
+const AquaStateSchema = new mongoose.Schema({
   date: {
     type: String,
     required: true,
@@ -22,7 +22,7 @@ const temperaturePressureSchema = new mongoose.Schema({
 });
 
 // Create the model for temperature and pressure data
-const TemperaturePressure = mongoose.model('TemperaturePressure', temperaturePressureSchema);
+const AquaState = mongoose.model('AquaState', AquaStateSchema);
 
 // Define the schema for user data
 const userSchema = new mongoose.Schema({
@@ -35,8 +35,8 @@ const userSchema = new mongoose.Schema({
 const User = mongoose.model('User', userSchema);
 
 // Function to fetch and format temperature and pressure data
-function fetchTemperaturePressureData(callback) {
-  TemperaturePressure.find({}, (err, data) => {
+function fetchAquaStateData(callback) {
+  AquaState.find({}, (err, data) => {
     if (err) {
       console.error('Error fetching data from MongoDB:', err);
       // Handle error
@@ -58,5 +58,4 @@ function fetchTemperaturePressureData(callback) {
   });
 }
 
-module.exports = { User, TemperaturePressure, fetchTemperaturePressureData };
- 
+module.exports = { User, AquaState, fetchAquaStateData };
