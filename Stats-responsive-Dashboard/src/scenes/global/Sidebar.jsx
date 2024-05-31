@@ -16,6 +16,7 @@ import BarChartOutlinedIcon from "@mui/icons-material/BarChartOutlined";
 //import PieChartOutlineOutlinedIcon from "@mui/icons-material/PieChartOutlineOutlined";
 import TimelineOutlinedIcon from "@mui/icons-material/TimelineOutlined";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
+import SpeedIcon from '@mui/icons-material/Speed';
 // import MapOutlinedIcon from "@mui/icons-material/MapOutlined";
 // import HelpOutlineOutlinedIcon from "@mui/icons-material/HelpOutlineOutlined";
 
@@ -155,6 +156,13 @@ const Item = ({ title, to, icon, selected, setSelected }) => {
           > */}
                 Charts & Data
               </Typography>
+              <Item
+                title="Realtime charts"
+                to="/realtime"
+                icon={<SpeedIcon />}
+                selected={selected}
+                setSelected={setSelected}
+              />
               <Item
                 title="Bar Chart"
                 to="/bar"

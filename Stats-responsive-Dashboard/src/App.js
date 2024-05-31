@@ -8,6 +8,7 @@ import Team from "./scenes/team";
 import History from "./scenes/history";
 import Bar from "./scenes/bar";
 import Line from "./scenes/line";
+import Realtime from './scenes/realtime';
 
 function App() {
   const [theme, colorMode] = useMode();
@@ -50,6 +51,7 @@ function App() {
               <Route path="/history" element={<History />} />
               <Route path="/line" element={<Line />} />
               <Route path="/bar" element={<Bar />} />
+              <Route path="/Realtime" element={<Realtime />} />
             </Routes>
             {/* You can pass data as props to your components if needed */}
           </main>

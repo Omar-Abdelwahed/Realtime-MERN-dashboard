@@ -24,7 +24,7 @@ const LineChart = ({ isCustomLineColors = false, isDashboard = false }) => {
     };
 
     fetchData(); 
-    const interval = setInterval(fetchData, 15000); // fetch data every 15 seconds
+    const interval = setInterval(fetchData, 10000); // fetch data every 15 seconds
 
     return () => clearInterval(interval); // clean up interval on component unmount
   }, []); 
