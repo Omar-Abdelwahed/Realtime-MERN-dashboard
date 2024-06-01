@@ -15,7 +15,7 @@ const LineChart = ({ isCustomLineColors = false, isDashboard = false }) => {
         const response = await axios.get("http://localhost:3100/api/AquaState");
         const formattedData = response.data.map(item => ({
           x: `${item.date} ${item.time}`,
-          temperature: item.temp,
+          temperature: item.temperature, 
         }));
         setAquaData(formattedData);
       } catch (error) {

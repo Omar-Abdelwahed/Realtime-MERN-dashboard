@@ -49,7 +49,7 @@ function fetchAquaStateData(callback) {
       id: item._id, // Assuming _id is available in your MongoDB documents
       date: item.date,
       timestamp: item.timestamp,
-      temp: item.temp,
+      temperature: item.temp,
       pressure: item.pressure,
     }));
 

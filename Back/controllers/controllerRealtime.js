@@ -2,14 +2,14 @@ const AquaStats = require('../models/model');
 
 // Controller function to handle the incoming data
 exports.postRealtimeData = async (req, res) => {
-    const { temp, pressure } = req.body;
+    const { temperature, pressure, time, } = req.body;
 
-    if (!temp || !pressure) {
-        return res.status(400).json({ error: 'Temp and Pressure are required' });
+    if (!temperature || !pressure) {
+        return res.status(400).json({ error: 'Temperature and Pressure are required' });
     }
 
     try {
-        const newData = new AquaStats({ temp, pressure, timestamp: new Date() });
+        const newData = new AquaStats({ temperature, pressure, time, date });
         await newData.save();
         res.status(201).json(newData);
     } catch (error) {

@@ -30,7 +30,7 @@ const BarChart = ({ isDashboard = false }) => {
   return (
     <ResponsiveBar
       data={aquaData}
-      keys={["temperature"]} // Display only temperature
+      keys={["pressure"]} // Display only pressure
       indexBy="dateTime"
       theme={{
         axis: {
@@ -80,7 +80,7 @@ const BarChart = ({ isDashboard = false }) => {
         tickSize: 5,
         tickPadding: 5,
         tickRotation: 0,
-        legend: isDashboard ? undefined : "Temperature",
+        legend: isDashboard ? undefined : "Pressure",
         legendPosition: "middle",
         legendOffset: -40,
       }}

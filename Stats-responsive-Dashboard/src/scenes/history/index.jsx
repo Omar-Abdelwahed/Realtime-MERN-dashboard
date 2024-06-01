@@ -22,7 +22,7 @@ const History = () => {
       flex: 1,
     },
     {
-      field: "temp",
+      field: "temperature",
       headerName: "Temperature",
       flex: 1,
     },
