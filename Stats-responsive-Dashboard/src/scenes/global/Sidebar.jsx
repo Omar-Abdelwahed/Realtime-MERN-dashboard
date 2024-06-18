@@ -7,6 +7,9 @@ import { Link } from "react-router-dom";
 import { tokens } from "../../theme";
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import PeopleOutlinedIcon from "@mui/icons-material/PeopleOutlined";
+
+import DeviceThermostatIcon from '@mui/icons-material/DeviceThermostat';
+import CompressIcon from '@mui/icons-material/Compress';
 //import ContactsOutlinedIcon from "@mui/icons-material/ContactsOutlined";
 import ReceiptOutlinedIcon from "@mui/icons-material/ReceiptOutlined";
 import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
@@ -164,16 +167,16 @@ const Item = ({ title, to, icon, selected, setSelected }) => {
                 setSelected={setSelected}
               />
               <Item
-                title="Bar Chart"
-                to="/bar"
-                icon={<BarChartOutlinedIcon />}
+                title="Pressure"
+                to="/press"
+                icon={<CompressIcon />}
                 selected={selected}
                 setSelected={setSelected}
               />
               <Item
-                title="Line Chart"
-                to="/line"
-                icon={<TimelineOutlinedIcon />}
+                title="Temperature"
+                to="/temp"
+                icon={<DeviceThermostatIcon />}
                 selected={selected}
                 setSelected={setSelected}
               /> 

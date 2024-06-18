@@ -15,7 +15,7 @@ const LineChart = ({ isCustomLineColors = false, isDashboard = false }) => {
         const response = await axios.get("http://localhost:3100/api/AquaState");
         const formattedData = response.data.map(item => ({
           x: `${item.date} ${item.time}`,
-          temperature: item.temperature, 
+          pressure: item.pressure,
         }));
         setAquaData(formattedData);
       } catch (error) {
@@ -24,7 +24,7 @@ const LineChart = ({ isCustomLineColors = false, isDashboard = false }) => {
     };
 
     fetchData(); 
-    const interval = setInterval(fetchData, 15000); // fetch data every 15 seconds
+    const interval = setInterval(fetchData, 10000); // fetch data every 15 seconds
 
     return () => clearInterval(interval); // clean up interval on component unmount
   }, []); 
@@ -48,10 +48,10 @@ const LineChart = ({ isCustomLineColors = false, isDashboard = false }) => {
     <ResponsiveLine
       data={[
         {
-          id: "Temperature",
+          id: "Pressure",
           data: aquaData.map(item => ({
             x: item.x,
-            y: item.temperature,
+            y: item.pressure,
           })),
         },
       ]}
@@ -117,7 +117,7 @@ const LineChart = ({ isCustomLineColors = false, isDashboard = false }) => {
         tickSize: 3,
         tickPadding: 5,
         tickRotation: 0,
-        legend: isDashboard ? undefined : "Temperature",
+        legend: isDashboard ? undefined : "Pressure",
         legendOffset: -40,
         legendPosition: "middle",
       }}

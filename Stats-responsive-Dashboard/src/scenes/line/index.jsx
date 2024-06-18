@@ -1,12 +1,13 @@
 import { Box } from "@mui/material";
 import Header from "../../components/Header";
-import LineChart from "../../components/LineChartTemp";
+import LineChart from "../../components/LineChart";
 import LineChart2 from "../../components/LineChartPress";
+
 const Line = () => {
   return (
     <Box m="20px">
       <Header title="Line Chart" subtitle="Temperature & Pressure" />
-      <Box height="40vh">
+      <Box height="40vh" mb="20px">
         <LineChart />
       </Box>
       <Box height="40vh">

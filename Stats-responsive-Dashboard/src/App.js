@@ -6,9 +6,10 @@ import Topbar from "./scenes/global/Topbar";
 import Sidebar from "./scenes/global/Sidebar";
 import Team from "./scenes/team";
 import History from "./scenes/history";
-import Bar from "./scenes/bar";
-import Line from "./scenes/line";
+import Temperature from "./scenes/bar";
+import Pressure from "./scenes/line";
 import Realtime from './scenes/realtime';
+import Dashboard from './scenes/dashboard';
 
 function App() {
   const [theme, colorMode] = useMode();
@@ -47,10 +48,11 @@ function App() {
           <main className="content">
             <Topbar />
             <Routes>
+              <Route path="/" element={<Dashboard />} />
               <Route path="/team" element={<Team />} />
               <Route path="/history" element={<History />} />
-              <Route path="/line" element={<Line />} />
-              <Route path="/bar" element={<Bar />} />
+              <Route path="/temp" element={<Temperature />} />
+              <Route path="/press" element={<Pressure />} />
               <Route path="/Realtime" element={<Realtime />} />
             </Routes>
             {/* You can pass data as props to your components if needed */}
