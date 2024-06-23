@@ -28,7 +28,9 @@ const AquaState = mongoose.model('AquaState', AquaStateSchema);
 const userSchema = new mongoose.Schema({
   name: String,
   email: String,
+  number: String,
   password: String,
+  role: String,
 });
 
 // Create a model for user data

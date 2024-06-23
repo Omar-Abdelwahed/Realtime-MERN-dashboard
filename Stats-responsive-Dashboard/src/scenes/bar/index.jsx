@@ -1,16 +1,16 @@
 import { Box } from "@mui/material";
 import Header from "../../components/Header";
-import LineChartPress from "../../components/LineChartPress";
-import BarChart2 from "../../components/BarChart2";
+import BarChart from "../../components/TempBarChart";
+import LineChart from "components/TempLineChart";
 const Bar = () => {
   return (
     <Box m="20px">
-      <Header title="Temperature logs" subtitle="Line & Bar charts:" />
+      <Header title="Temperature Charts" subtitle="Temperature Data" />
       <Box height="40vh">
-        <LineChartPress />
+        <LineChart />
       </Box>
       <Box height="40vh">
-        <BarChart2 />
+        <BarChart />
       </Box>
     </Box>
     
