@@ -7,7 +7,7 @@ import Header from "../../components/Header";
 
 const Realtime = () => {
   const theme = useTheme();
-  const isDarkMode = theme.palette.mode === 'dark'; // Check if dark mode is enabled
+  const isDarkMode = theme.palette.mode === 'dark'; // chouf dark mode mahtout walle
   const colors = tokens(theme.palette.mode);
   const [data, setData] = useState({ temperature: 0, pressure: 0, dateTime: "" });
 

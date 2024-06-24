@@ -32,7 +32,7 @@ const Login = () => {
       navigate('/'); // Redirect to dashboard
     } catch (error) {
       console.error("Error logging in:", error);
-      setError("Login failed, check your credentials");
+      setError("ACCESS DENIED, Please try again or contact an admin.");
     }
   };
 
@@ -51,7 +51,7 @@ const Login = () => {
         borderRadius="8px"
         boxShadow="0 0 10px rgba(0, 0, 0, 0.1)"
       >
-        <h2>Login</h2>
+        <h2>Welcome back! Please login</h2>
         <TextField
           label="Email"
           type="email"

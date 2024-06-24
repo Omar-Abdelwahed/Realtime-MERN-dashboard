@@ -1,40 +1,39 @@
 import React from "react";
-import { Box } from "@mui/material";
+import { Box, Grid } from "@mui/material";
 import Header from "../../components/Header";
-import Realtime from "scenes/realtime";
-import Line from "scenes/line";
-import Bar from "scenes/bar";
-import { useNavigate } from "react-router-dom";
+import TempBarChart from "../../components/TempBarChart";
+import TempLineChart from "../../components/TempLineChart";
+import PressLineChart from "../../components/PressLineChart";
+import PressBarChart from "../../components/PressBarChart";
+import Realtime from "../realtime/index";
 
 const Dashboard = () => {
- {/* const navigate = useNavigate();
-  React.useEffect(() => {
-    const isAuthenticated = localStorage.getItem('isAuthenticated');
-    if (!isAuthenticated) navigate("/login")
-  },[])
-    
-  */}
   return (
-    <Box m="20px" maxWidth="1400px" maxHeight="800px">
-      <Header
-        title="Dashboard"
-        subtitle="Welcome To Your Dashboard"
-      />
-      <Box display="flex" flexDirection="column" height="100%">
-        <Box mb={2} flex="1" display="flex" justifyContent="space-between">
-          <Box flex="1" mr={1}>
-            <Realtime style={{ height: "100%", width: "100%" }} />
+    <Box m="20px" maxWidth="1400px">
+      <Header title="Sea-Gust" subtitle="Welcome To the monitoring dashboard" />
+      <Realtime showHeader={false} /> {/* Use Realtime component without Header */}
+      <Grid container spacing={2} mt={2}>
+        <Grid item xs={6}>
+          <Box height="20vh">
+            <TempLineChart />
           </Box>
-        </Box>
-        <Box mt={2} flex="1" display="flex" justifyContent="space-between">
-          <Box flex="1" mr={1}>
-            <Line style={{ height: "100%", width: "100%" }} />
+        </Grid>
+        <Grid item xs={6}>
+          <Box height="20vh">
+            <PressLineChart />
           </Box>
-          <Box flex="1" ml={1}>
-            <Bar style={{ height: "100%", width: "100%" }} />
+        </Grid>
+        <Grid item xs={6}>
+          <Box height="20vh" mt={1}>
+            <TempBarChart />
           </Box>
-        </Box>
-      </Box>
+        </Grid>
+        <Grid item xs={6}>
+          <Box height="20vh" mt={1}>
+            <PressBarChart />
+          </Box>
+        </Grid>
+      </Grid>
     </Box>
   );
 };
